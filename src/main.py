@@ -1,6 +1,7 @@
-import pandas as pd
-class Reader:
-    def __init__(self,path):
-        self.path = path
-    def read_csv(self):
-        return pd.read_csv(self.path)
+from read import Reader
+
+reader = Reader("data/transactions.csv")
+
+df = reader.read_csv()
+
+print(df.head())

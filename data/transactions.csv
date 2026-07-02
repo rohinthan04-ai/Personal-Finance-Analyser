@@ -1,0 +1,101 @@
+Date,Category,Amount,Type,Description
+2026-01-02,Transport,532,Expense,Metro
+2026-01-02,Shopping,3512,Expense,Electronics
+2026-01-09,Food,817,Expense,Dinner
+2026-01-09,Healthcare,3336,Expense,Dental
+2026-01-12,Salary,30000,Income,Monthly Salary
+2026-01-13,Freelance,5000,Income,Client Payment
+2026-01-13,Transport,1302,Expense,Metro
+2026-01-15,Investment,45000,Income,Dividend
+2026-01-15,Entertainment,4697,Expense,Movie
+2026-01-17,Entertainment,4696,Expense,Games
+2026-01-18,Food,2756,Expense,Lunch
+2026-01-18,Food,1916,Expense,Groceries
+2026-01-19,Freelance,8000,Income,Project Payment
+2026-01-21,Entertainment,877,Expense,Concert
+2026-01-22,Salary,5000,Income,Monthly Salary
+2026-01-25,Transport,3581,Expense,Fuel
+2026-01-27,Transport,3162,Expense,Bus
+2026-01-29,Transport,1271,Expense,Bus
+2026-01-29,Healthcare,2569,Expense,Clinic
+2026-01-31,Investment,8000,Income,Dividend
+2026-02-02,Salary,30000,Income,Monthly Salary
+2026-02-03,Healthcare,613,Expense,Clinic
+2026-02-03,Bills,1373,Expense,Mobile
+2026-02-04,Bills,995,Expense,Electricity
+2026-02-05,Freelance,25000,Income,Client Payment
+2026-02-06,Bills,1193,Expense,Internet
+2026-02-09,Entertainment,2480,Expense,Streaming
+2026-02-09,Healthcare,1373,Expense,Medicine
+2026-02-11,Shopping,3427,Expense,Clothes
+2026-02-11,Healthcare,2960,Expense,Clinic
+2026-02-12,Education,67,Expense,Workshop
+2026-02-18,Freelance,25000,Income,Client Payment
+2026-02-24,Freelance,8000,Income,Project Payment
+2026-02-24,Freelance,45000,Income,Client Payment
+2026-02-24,Salary,25000,Income,Monthly Salary
+2026-02-26,Salary,30000,Income,Monthly Salary
+2026-02-27,Transport,2819,Expense,Bus
+2026-03-01,Freelance,30000,Income,Client Payment
+2026-03-02,Shopping,3379,Expense,Books
+2026-03-04,Salary,25000,Income,Monthly Salary
+2026-03-04,Entertainment,1193,Expense,Movie
+2026-03-05,Transport,3680,Expense,Bus
+2026-03-06,Food,806,Expense,Snacks
+2026-03-08,Entertainment,2623,Expense,Streaming
+2026-03-09,Freelance,8000,Income,Client Payment
+2026-03-09,Salary,12000,Income,Monthly Salary
+2026-03-09,Education,1122,Expense,Exam Fee
+2026-03-09,Freelance,30000,Income,Project Payment
+2026-03-12,Food,79,Expense,Groceries
+2026-03-13,Salary,45000,Income,Monthly Salary
+2026-03-13,Shopping,1813,Expense,Electronics
+2026-03-21,Education,3109,Expense,Workshop
+2026-03-22,Food,460,Expense,Snacks
+2026-03-28,Transport,2086,Expense,Metro
+2026-04-02,Healthcare,4995,Expense,Dental
+2026-04-04,Food,2981,Expense,Dinner
+2026-04-05,Bills,1342,Expense,Mobile
+2026-04-05,Investment,30000,Income,Dividend
+2026-04-07,Transport,4572,Expense,Fuel
+2026-04-08,Bills,4612,Expense,Internet
+2026-04-09,Education,4931,Expense,Workshop
+2026-04-19,Education,3875,Expense,Course
+2026-04-19,Shopping,2331,Expense,Books
+2026-04-21,Shopping,392,Expense,Electronics
+2026-04-22,Shopping,3766,Expense,Clothes
+2026-04-28,Healthcare,644,Expense,Medicine
+2026-04-28,Investment,30000,Income,Dividend
+2026-05-04,Entertainment,3335,Expense,Movie
+2026-05-09,Freelance,8000,Income,Client Payment
+2026-05-11,Transport,1572,Expense,Bus
+2026-05-12,Entertainment,2331,Expense,Concert
+2026-05-13,Salary,5000,Income,Monthly Salary
+2026-05-16,Bills,4582,Expense,Electricity
+2026-05-17,Entertainment,1388,Expense,Concert
+2026-05-20,Bills,4383,Expense,Electricity
+2026-05-22,Shopping,2281,Expense,Electronics
+2026-05-22,Education,4644,Expense,Course
+2026-05-24,Entertainment,4514,Expense,Concert
+2026-05-24,Freelance,12000,Income,Project Payment
+2026-05-24,Education,1316,Expense,Books
+2026-05-30,Education,3015,Expense,Books
+2026-05-31,Freelance,8000,Income,Client Payment
+2026-06-02,Transport,1976,Expense,Taxi
+2026-06-03,Healthcare,4052,Expense,Medicine
+2026-06-04,Entertainment,2858,Expense,Streaming
+2026-06-08,Transport,3484,Expense,Fuel
+2026-06-10,Investment,12000,Income,Dividend
+2026-06-10,Bills,4208,Expense,Internet
+2026-06-13,Transport,254,Expense,Fuel
+2026-06-14,Healthcare,963,Expense,Dental
+2026-06-20,Freelance,12000,Income,Client Payment
+2026-06-21,Bills,634,Expense,Internet
+2026-06-22,Transport,546,Expense,Taxi
+2026-06-23,Freelance,5000,Income,Project Payment
+2026-06-24,Transport,4448,Expense,Fuel
+2026-06-24,Education,4935,Expense,Course
+2026-06-24,Entertainment,892,Expense,Games
+2026-06-25,Healthcare,508,Expense,Clinic
+2026-06-25,Bills,4190,Expense,Mobile
+2026-06-28,Freelance,45000,Income,Project Payment
