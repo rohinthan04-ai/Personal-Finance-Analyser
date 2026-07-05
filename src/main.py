@@ -4,4 +4,4 @@ reader = Reader("data/transactions.csv")
 
 df = reader.read_csv()
 
-print(df.head())
+print(df)
