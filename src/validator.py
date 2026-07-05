@@ -20,6 +20,12 @@ class Validator:
             if not self.validate_type(type):
                 print("Invalid type",type)
                 return
+            
+        #checking category
+        for category in self.transactions["Category"].str.lower():
+            if not self.validate_category(category):
+                print("Invalid category",category)
+                return
         
     def validate_field(self):
         heading = set(self.transactions.columns.str.lower())
@@ -37,6 +43,12 @@ class Validator:
         
     def validate_type(self,type):
         if type in {"income","expense"} :
+            return True
+        else:
+            return False
+        
+    def validate_category(self,category):
+        if category in {"salary", "freelance","entertainment","investment","gift","food","transport","shopping","bills","healthcare","education","business"} :
             return True
         else:
             return False
