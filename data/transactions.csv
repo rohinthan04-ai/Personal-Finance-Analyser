@@ -1,7 +1,7 @@
 Date,Category,Amount,Type,Description
 2026-01-02,Transport,532,Expense,Metro
 2026-01-02,Shopping,3512,Expense,Electronics
-2026-01-09,Food,817,Expense,Dinner
+2026-01-09,Food,99,Expense,Dinner
 2026-01-09,Healthcare,3336,Expense,Dental
 2026-01-12,Salary,30000,Income,Monthly Salary
 2026-01-13,Freelance,5000,Income,Client Payment
@@ -9,7 +9,7 @@ Date,Category,Amount,Type,Description
 2026-01-15,Investment,45000,Income,Dividend
 2026-01-15,Entertainment,4697,Expense,Movie
 2026-01-17,Entertainment,4696,Expense,Games
-2026-01-18,Food,2756,Expense,Lunch
+2026-01-18,Food,0.009,Expense,Lunch
 2026-01-18,Food,1916,Expense,Groceries
 2026-01-19,Freelance,8000,inCome,Project Payment
 2026-01-21,Entertainment,877,Expense,Concert

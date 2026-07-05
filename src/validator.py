@@ -27,6 +27,12 @@ class Validator:
                 print("Invalid category",category)
                 return
         
+        #validating the amount
+        for amount in self.transactions["Amount"]:
+            if not self.validate_amount(amount):
+                print("Invalid amount ",amount)
+                return
+        
     def validate_field(self):
         heading = set(self.transactions.columns.str.lower())
         if heading == {'amount', 'category', 'description', 'date', 'type'} :
@@ -52,3 +58,9 @@ class Validator:
             return True
         else:
             return False
+    def validate_amount(self,amount):
+        try:
+            amount = float(amount)
+        except ValueError:
+            return False
+        return amount > 0
