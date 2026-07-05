@@ -11,7 +11,7 @@ Date,Category,Amount,Type,Description
 2026-01-17,Entertainment,4696,Expense,Games
 2026-01-18,Food,2756,Expense,Lunch
 2026-01-18,Food,1916,Expense,Groceries
-2026-01-19,Freelance,8000,Income,Project Payment
+2026-01-19,Freelance,8000,inCome,Project Payment
 2026-01-21,Entertainment,877,Expense,Concert
 2026-01-22,Salary,5000,Income,Monthly Salary
 2026-01-25,Transport,3581,Expense,Fuel

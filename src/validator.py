@@ -15,6 +15,12 @@ class Validator:
                 print("Invalid date",date)
                 return
         
+        #checking type
+        for type in self.transactions["Type"].str.lower():
+            if not self.validate_type(type):
+                print("Invalid type",type)
+                return
+        
     def validate_field(self):
         heading = set(self.transactions.columns.str.lower())
         if heading == {'amount', 'category', 'description', 'date', 'type'} :
@@ -27,4 +33,10 @@ class Validator:
             datetime.strptime(date,"%Y-%m-%d")
             return True
         except ValueError:
+            return False
+        
+    def validate_type(self,type):
+        if type in {"income","expense"} :
+            return True
+        else:
             return False
