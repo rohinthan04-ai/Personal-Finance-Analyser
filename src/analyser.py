@@ -6,8 +6,10 @@ class Analyser:
         #Calculating the total expese,income,savings
         total_expense = self.calculate_total_expense(self.df[self.df["Type"].str.lower()=="expense"])
         total_income = self.calculate_total_income(self.df[self.df["Type"].str.lower() == "income"])
+        total_savings = total_income-total_expense
         print(total_income)
         print(total_expense)
+        print(total_savings)
 
     def calculate_total_expense(self,expense):
         return expense["Amount"].sum()
