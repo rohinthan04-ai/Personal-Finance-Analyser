@@ -32,6 +32,12 @@ class Validator:
             if not self.validate_amount(amount):
                 print("Invalid amount ",amount)
                 return
+            
+        #validating description
+        for string in self.transactions["Description"]:
+            if not self.validate_description(string):
+                print("Invalid description",string)
+                return
         
     def validate_field(self):
         heading = set(self.transactions.columns.str.lower())
@@ -64,3 +70,10 @@ class Validator:
         except ValueError:
             return False
         return amount > 0
+    
+    def validate_description(self,string):
+        if pd.isna(string):
+            return False
+        return set(string) != {" "}
+        
+         
