@@ -38,6 +38,12 @@ class Validator:
             if not self.validate_description(string):
                 print("Invalid description",string)
                 return
+            
+        #validating the category and type
+        for index,row in self.transactions.iterrows() :
+            if not self.validate_type_category(row["Type"].lower(),row["Category"].lower()):
+                print("Error in row :",index+1)
+                print("Type and Category Mismatch. Type: ",row["Type"],"Category: ",row["Category"])
         
     def validate_field(self):
         heading = set(self.transactions.columns.str.lower())
@@ -76,4 +82,8 @@ class Validator:
             return False
         return set(string) != {" "}
         
-         
+    def validate_type_category(self,type,category):
+        if type == "expense" :
+            return category in {"entertainment","food","transport","shopping","bills","healthcare","education"}
+        else:
+            return category not in {"entertainment","food","transport","shopping","bills","healthcare","education"}
