@@ -11,8 +11,25 @@ class Analyser:
         print(total_expense)
         print(total_savings)
 
+        #Calculating the Category wise income and expense
+        category_expense = self.calculate_category_expense(self.df[self.df["Type"].str.lower()=="expense"])
+        category_income = self.caluculate_category_income(self.df[self.df["Type"].str.lower() == "income"])
+        print(category_expense)
+        print(category_income)
+
     def calculate_total_expense(self,expense):
         return expense["Amount"].sum()
     
     def calculate_total_income(self,income):
         return income["Amount"].sum()
+    
+    def calculate_category_expense(self,data):
+        g = data.groupby(["Category"])
+        result = g["Amount"].sum()
+        result = result.to_dict()
+        return result
+    def caluculate_category_income(self,data):
+        g = data.groupby('Category')
+        result = g["Amount"].sum()
+        result = result.to_dict()
+        return result
