@@ -15,6 +15,8 @@ class Analyser:
         category_expense = self.calculate_category_expense()
         category_income = self.caluculate_category_income()
         highest_expense = self.calculate_highest_expense()
+        highest_income = self.calculate_highest_income()
+        print(highest_income)
         print(highest_expense)
         print(category_expense)
         print(category_income)
@@ -41,6 +43,12 @@ class Analyser:
     
     def calculate_highest_expense(self):
         data = self.df[self.df["Type"].str.lower() == "expense"]
+        result = data[data["Amount"] == data["Amount"].max()]
+        result = result.to_dict(orient='records')
+        return result
+    
+    def calculate_highest_income(self):
+        data = self.df[self.df["Type"].str.lower() == "income"]
         result = data[data["Amount"] == data["Amount"].max()]
         result = result.to_dict(orient='records')
         return result
