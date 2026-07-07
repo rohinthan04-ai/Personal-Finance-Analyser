@@ -21,6 +21,9 @@ class Analyser:
         print(category_expense)
         print(category_income)
 
+        #Calculating averages
+        average_income = self.calculate_average_income()
+        print(average_income)
 
     def calculate_total_expense(self,expense):
         return expense["Amount"].sum()
@@ -52,3 +55,7 @@ class Analyser:
         result = data[data["Amount"] == data["Amount"].max()]
         result = result.to_dict(orient='records')
         return result
+    
+    def calculate_average_income(self):
+        data = self.df[self.df["Type"].str.lower() == "income"]
+        return data["Amount"].mean()
