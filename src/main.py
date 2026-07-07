@@ -10,6 +10,7 @@ v = Validator(df)
 v.validate()
 
 a = Analyser(df)
-a.analyse()
+analysed_results = a.analyse()
+print(analysed_results)
 
 
