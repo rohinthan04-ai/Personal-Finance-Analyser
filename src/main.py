@@ -1,16 +1,17 @@
 from read import Reader
 from validator import Validator
 from analyser import Analyser
+from visualizer import Visualizer
 reader = Reader("data/transactions.csv")
 
 df = reader.read_csv()
-print(df.head())
 
-v = Validator(df)
-v.validate()
+vali = Validator(df)
+vali.validate()
 
-a = Analyser(df)
-analysed_results = a.analyse()
-print(analysed_results)
+anal = Analyser(df)
+analysed_results = anal.analyse()
 
+visu = Visualizer(analysed_results)
+visu.visualize()
 
