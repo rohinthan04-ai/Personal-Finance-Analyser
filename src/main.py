@@ -14,4 +14,3 @@ analysed_results = anal.analyse()
 
 visu = Visualizer(analysed_results)
 visu.visualize()
-
