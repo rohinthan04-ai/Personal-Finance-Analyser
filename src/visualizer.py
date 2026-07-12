@@ -14,6 +14,7 @@ class Visualizer:
         plt.xlabel("Category")
         plt.ylabel("Amount")
         plt.show()
+        plt.close()
     def income_bar(self,income_data):
         x = income_data.keys()
         y = income_data.values()
@@ -22,8 +23,13 @@ class Visualizer:
         plt.xlabel("Category")
         plt.ylabel("Amount")
         plt.show()
-    def expense_income_savings_bar(self,expense_data,income_data,savaings):
+        plt.close()
+    def expense_income_savings_bar(self,expense_data,income_data,savings):
         x = ["Savings","Expense","Income"]
-        y = [savaings,expense_data,income_data]
+        y = [savings,expense_data,income_data]
+        plt.title("Income VS Expense VS Savings")
+        plt.xlabel("Amount")
+        plt.ylabel("Category")
         plt.barh(x,y)
         plt.show()
+        plt.close()

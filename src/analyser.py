@@ -10,7 +10,7 @@ class Analyser:
 
         #Calculating the Category wise income and expense
         category_expense = self.calculate_category_expense()
-        category_income = self.caluculate_category_income()
+        category_income = self.calculate_category_income()
 
         #Calculating extremes
         highest_expense = self.calculate_highest_expense(category_expense)
@@ -51,7 +51,7 @@ class Analyser:
         result = g["Amount"].sum()
         result = result.to_dict()
         return result
-    def caluculate_category_income(self):
+    def calculate_category_income(self):
         data = self.df[self.df["Type"].str.lower() == "income"]
         g = data.groupby('Category')
         result = g["Amount"].sum()
