@@ -44,7 +44,7 @@ Date,Category,Amount,Type,Description
 2026-03-06,Food,806,Expense,Snacks
 2026-03-08,Entertainment,2623,Expense,Streaming
 2026-03-09,Freelance,8000,Income,Client Payment
-2026-03-09,Salary,12000,Income,Monthly Salary
+2026-03-09,SalaRy,12000,Income,Monthly Salary
 2026-03-09,Education,1122,Expense,Exam Fee
 2026-03-09,Freelance,30000,Income,Project Payment
 2026-03-12,Food,79,Expense,Groceries

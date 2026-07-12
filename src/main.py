@@ -8,8 +8,10 @@ reader = Reader("data/transactions.csv")
 df = reader.read_csv()
 
 vali = Validator(df)
-vali.validate()
-
+valid=vali.validate()
+if not valid:
+    print("Validation fails, program terminatd")
+    exit()
 anal = Analyser(df)
 analysed_results = anal.analyse()
 
