@@ -9,9 +9,11 @@ class InsightGenerator:
         #finance rations
         self.ratios(insights)
         
-        #Category wise analysis
+        
         self.category_analysis(insights)
         return insights
+        
+       
         
     def summary(self,insights):
         savings = self.data["total_savings"]
