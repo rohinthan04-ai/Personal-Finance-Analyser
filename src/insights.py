@@ -9,6 +9,8 @@ class InsightGenerator:
         #finance rations
         self.ratios(insights)
         
+        #Category wise analysis
+        self.category_analysis(insights)
         return insights
         
     def summary(self,insights):
@@ -29,3 +31,29 @@ class InsightGenerator:
         savings_ratio = round((savings/income)*100,2)
         insights.append(f"You spend {expense_ratio}% of your income")
         insights.append(f"You save {savings_ratio}% of your income")
+
+    def category_analysis(self,insights):
+        highest_expense=self.data["highest_expense"]
+        lowest_expense=self.data["lowest_expense"]
+        highest_income=self.data["highest_income"]
+        lowest_income=self.data["lowest_income"]
+        highest_expense_category = ''
+        lowest_expense_category =''
+        highest_income_category = ''
+        lowest_income_category =''
+        for i  in highest_expense:
+            highest_expense_category = highest_expense_category+i["Category"]+" "
+       
+        for i in lowest_expense:
+            lowest_expense_category = lowest_expense_category+i["Category"]+" "
+
+        for i  in highest_income:
+            highest_income_category = highest_income_category+i["Category"]+" "
+       
+        for i in lowest_income:
+            lowest_income_category = lowest_income_category+i["Category"]+" "
+        
+        insights.append(f"{highest_expense_category} is your biggest spending category")
+        insights.append(f"{lowest_expense_category} is your least spending category")
+        insights.append(f"{highest_income_category} is your Primary Source of income")
+        insights.append(f"{lowest_income_category} is were you get least income")
