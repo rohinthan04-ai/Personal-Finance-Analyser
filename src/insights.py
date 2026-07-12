@@ -37,23 +37,12 @@ class InsightGenerator:
         lowest_expense=self.data["lowest_expense"]
         highest_income=self.data["highest_income"]
         lowest_income=self.data["lowest_income"]
-        highest_expense_category = ''
-        lowest_expense_category =''
-        highest_income_category = ''
-        lowest_income_category =''
-        for i  in highest_expense:
-            highest_expense_category = highest_expense_category+i["Category"]+" "
-       
-        for i in lowest_expense:
-            lowest_expense_category = lowest_expense_category+i["Category"]+" "
-
-        for i  in highest_income:
-            highest_income_category = highest_income_category+i["Category"]+" "
-       
-        for i in lowest_income:
-            lowest_income_category = lowest_income_category+i["Category"]+" "
+        highest_expense_category = " ".join(highest_expense)
+        lowest_expense_category =' '.join(lowest_expense)
+        highest_income_category = ' '.join(highest_income)
+        lowest_income_category =' '.join(lowest_income)
         
         insights.append(f"{highest_expense_category} is your biggest spending category")
         insights.append(f"{lowest_expense_category} is your least spending category")
         insights.append(f"{highest_income_category} is your Primary Source of income")
-        insights.append(f"{lowest_income_category} is were you get least income")
+        insights.append(f"{lowest_income_category} is your smallest source of income.")

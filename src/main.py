@@ -16,10 +16,6 @@ analysed_results = anal.analyse()
 visu = Visualizer(analysed_results)
 visu.visualize()
 
-#ingen = InsightGenerator(analysed_results)
-#insights=ingen.generate()
-p=analysed_results["highest_income"]
-print(p)
-#for i in p:
-    #print(i["Category"])
-#print(insights)
+ingen = InsightGenerator(analysed_results)
+insights=ingen.generate()
+print(insights)
