@@ -27,5 +27,6 @@ def main():
     insight_generator = InsightGenerator(analysed_results)
     insights=insight_generator.generate()
 
+
 if __name__ =="__main__":
     main()
