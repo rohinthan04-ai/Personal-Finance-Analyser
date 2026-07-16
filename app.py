@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas as pd
 from src.read import Reader
 from src.validator import Validator
 
@@ -27,6 +28,12 @@ if file != None:
 
 #---Validation Block---
 st.header("Validation")
+if file != None:
+    read = Reader(file)
+    df = read.read_csv()
+    validator = Validator(df)
+    validation_result = validator.validate()
+    st.write(validation_result)
 
 st.markdown("---")
 
