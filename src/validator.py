@@ -40,7 +40,7 @@ class Validator:
             if not self.validate_type_category(row["Type"].lower(),row["Category"].lower()):
                 return(f"Type and Category Mismatch. 'Type: {row["Type"]} and Category: {row["Category"]}' in row {index+1}")
             
-        return("Validation Successful")
+        return(True)
         
     def validate_field(self):
         heading = set(self.transactions.columns.str.lower())

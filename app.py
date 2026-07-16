@@ -33,8 +33,10 @@ if file != None:
     df = read.read_csv()
     validator = Validator(df)
     validation_result = validator.validate()
-    st.write(validation_result)
-
+    if(validation_result != True):
+        st.error(validation_result)
+    else:
+        st.success("CSV validated successfully. Ready for analysis.")
 st.markdown("---")
 
 #---Finance Summary---
