@@ -4,6 +4,7 @@ from src.read import Reader
 from src.validator import Validator
 from src.analyser import Analyser
 from src.visualizer import Visualizer
+from src.insights import InsightGenerator
 st.title("📊Personal Finance Analyser")
 st.markdown("""
 ## Welcome!
@@ -81,4 +82,10 @@ st.markdown("---")
 
 #---Finance Block---
 st.header("Finance Insights")
+if validation_result == True:
+    generate = InsightGenerator(analysed_results)
+    insights = generate.generate()
+    for insight in insights:
+        st.write("-",insight)
+
 
