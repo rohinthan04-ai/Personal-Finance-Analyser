@@ -7,29 +7,33 @@ class Visualizer:
         self.income_bar(self.data["category_income"])
         self.expense_income_savings_bar(self.data["total_expense"],self.data["total_income"],self.data["total_savings"])
     def expense_bar(self,expense_data):
+        fig,ax = plt.subplots()
         x = expense_data.keys()
         y = expense_data.values()
-        plt.bar(x,y)
-        plt.title("Expense by Category")
-        plt.xlabel("Category")
-        plt.ylabel("Amount")
-        plt.show()
-        plt.close()
+        ax.bar(x,y)
+        ax.set_title("Expense by Category")
+        ax.set_xlabel("Category")
+        ax.set_ylabel("Amount")
+        fig.tight_layout()
+        return fig
     def income_bar(self,income_data):
+        fig,ax = plt.subplots()
         x = income_data.keys()
         y = income_data.values()
-        plt.bar(x,y)
-        plt.title("Income by category")
-        plt.xlabel("Category")
-        plt.ylabel("Amount")
-        plt.show()
-        plt.close()
+        ax.bar(x,y)
+        ax.set_title("Income by category")
+        ax.set_xlabel("Category")
+        ax.set_ylabel("Amount")
+        fig.tight_layout()
+        return fig
     def expense_income_savings_bar(self,expense_data,income_data,savings):
+        fig,ax=plt.subplots()
         x = ["Savings","Expense","Income"]
         y = [savings,expense_data,income_data]
-        plt.title("Income VS Expense VS Savings")
-        plt.xlabel("Amount")
-        plt.ylabel("Category")
-        plt.barh(x,y)
-        plt.show()
-        plt.close()
+        ax.barh(x,y)
+        ax.set_title("Income VS Expense VS Savings")
+        ax.set_xlabel("Amount")
+        ax.set_ylabel("Category")
+        
+        fig.tight_layout()
+        return fig
