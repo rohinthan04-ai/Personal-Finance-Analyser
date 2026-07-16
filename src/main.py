@@ -11,8 +11,8 @@ def main():
     #--------VALIDATING THE GIVEN FILE USING THE VALIDATOR MODULE-------
     validator = Validator(transactions)
     is_valid=validator.validate()
-    if not is_valid:
-       print("Validation fails, program terminated")
+    if is_valid != True:
+       print(is_valid)
        return
 
     #-----ANALYSING THE DATA USING THE ANALYSER MODULE----

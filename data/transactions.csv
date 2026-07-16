@@ -1,5 +1,5 @@
 Date,Category,Amount,Type,Description
-2026-01-02,Transport,532,Expense,Metro
+2026-01-02,Transport,5000,Expense,Metro
 2026-01-02,gift,3512,Income,Electronics
 2026-01-09,Food,4995.0,Expense,Dinner
 2026-01-09,Healthcare,3336,Expense,Dental

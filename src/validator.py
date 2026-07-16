@@ -8,46 +8,39 @@ class Validator:
     def validate(self):
         #cheacking the heading
         if not self.validate_field():
-            return False
+            return "Invalid Feild"
 
         #cheacking the date
-        for date in self.transactions["Date"]:
-            if not self.validate_date(date):
-                print("Invalid date",date)
-                return False
+        for index,date in self.transactions.iterrows():
+            if not self.validate_date(date["Date"]):
+                return (f"Invalid date : '{date["Date"]}' in row {index+1}")
         
         #checking type
-        for type_ in self.transactions["Type"].str.lower():
-            if not self.validate_type(type_):
-                print("Invalid type",type_)
-                return False
+        for index,type_ in self.transactions.iterrows():
+            if not self.validate_type(type_["Type"].lower()):
+                return (f"Invalid type : '{type_["Type"]}' in row {index+1}")
             
         #checking category
-        for category in self.transactions["Category"].str.lower():
-            if not self.validate_category(category):
-                print("Invalid category",category)
-                return False
+        for index,category in self.transactions.iterrows():
+            if not self.validate_category(category["Category"].lower()):
+                return (f"Invalid category : '{category["Category"]}' in row {index+1}")
         
         #validating the amount
-        for amount in self.transactions["Amount"]:
-            if not self.validate_amount(amount):
-                print("Invalid amount ",amount)
-                return False
+        for index,amount in self.transactions.iterrows():
+            if not self.validate_amount(amount["Amount"]):
+               return(f"Invalid Amount : '{amount["Amount"]}' in row {index+1}")
             
         #validating description
-        for string in self.transactions["Description"]:
-            if not self.validate_description(string):
-                print("Invalid description",string)
-                return False
+        for index,string in self.transactions.iterrows():
+            if not self.validate_description(string["Description"]):
+                return(f"Invalid Description in row : {index+1}")
             
         #validating the category and type
         for index,row in self.transactions.iterrows() :
             if not self.validate_type_category(row["Type"].lower(),row["Category"].lower()):
-                print("Error in row :",index+1)
-                print("Type and Category Mismatch. Type: ",row["Type"],"Category: ",row["Category"])
-                return False
+                return(f"Type and Category Mismatch. 'Type: {row["Type"]} and Category: {row["Category"]}' in row {index+1}")
             
-        return True
+        return("Validation Successful")
         
     def validate_field(self):
         heading = set(self.transactions.columns.str.lower())

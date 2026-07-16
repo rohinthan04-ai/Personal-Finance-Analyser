@@ -1,5 +1,6 @@
 import streamlit as st
 from src.read import Reader
+from src.validator import Validator
 
 st.title("Personal Finance Analyser")
 st.markdown("""
@@ -15,6 +16,8 @@ Upload your **transaction CSV** to begin.
 - Generate financial insights
 """)
 st.markdown("---")
+
+#---Uploading block---
 st.sidebar.header("Upload")
 file = None
 file = st.sidebar.file_uploader("Upload your csv file",type=["csv"])
@@ -22,11 +25,12 @@ if file != None:
     st.sidebar.write(f"Successfully uploaded the {file.name}")
 
 
-
+#---Validation Block---
 st.header("Validation")
 
 st.markdown("---")
 
+#---Finance Summary---
 st.header("Finance Summary")
 col1,col2,col3 = st.columns(3)
 with col1:
@@ -38,9 +42,11 @@ with col3:
 
 st.markdown("---")
 
+#---Charts Block---
 st.header("Charts")
 
 st.markdown("---")
 
+#---Finance Block---
 st.header("Finance Insights")
 
