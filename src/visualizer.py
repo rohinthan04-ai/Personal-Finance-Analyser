@@ -14,6 +14,7 @@ class Visualizer:
         ax.set_title("Expense by Category")
         ax.set_xlabel("Category")
         ax.set_ylabel("Amount")
+        ax.tick_params(axis="x", rotation=45)
         fig.tight_layout()
         return fig
     def income_bar(self,income_data):
@@ -24,6 +25,7 @@ class Visualizer:
         ax.set_title("Income by category")
         ax.set_xlabel("Category")
         ax.set_ylabel("Amount")
+        ax.tick_params(axis="x", rotation=45)
         fig.tight_layout()
         return fig
     def expense_income_savings_bar(self,expense_data,income_data,savings):

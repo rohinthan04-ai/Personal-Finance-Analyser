@@ -28,64 +28,62 @@ if file != None:
     st.sidebar.write(f"Successfully uploaded the {file.name}")
 
 validation_result = False
-#---Validation Block---
-st.header("Validation")
 if file != None:
+    #---Validation Block---
+    st.header("Validation Status")
     read = Reader(file)
     df = read.read_csv()
     validator = Validator(df)
     validation_result = validator.validate()
+
     if(validation_result != True):
         st.error(validation_result)
     else:
         st.success("CSV validated successfully. Ready for analysis.")
-st.markdown("---")
+        st.markdown("---")
 
 
-#---Analysis Block---
-if validation_result == True:
-    analysis = Analyser(df)
-    analysed_results = analysis.analyse()
+        #---Analysis Block---
+        analysis = Analyser(df)
+        analysed_results = analysis.analyse()
 
-    #---Finance Summary---
-    st.header("Finance Summary")
-    col1,col2,col3 = st.columns(3)
-    with col1:
-        st.subheader("💰Income")
-        st.write('₹',analysed_results["total_income"])
-    with col2:
-        st.subheader("💸Expense")
-        st.write('₹',analysed_results["total_expense"])
-    with col3:
-        st.subheader("🏦Savings")
-        st.write('₹',analysed_results["total_savings"])
+        #---Finance Summary---
+        st.header("Finance Summary")
+        col1,col2,col3 = st.columns(3)
+        with col1:
+            st.metric("💰Total Income",analysed_results["total_income"])
+        with col2:
+           st.metric("💸Expense",analysed_results["total_expense"])
+        with col3:
+            st.metric("🏦Savings",analysed_results["total_savings"])
 
-st.markdown("---")
+        st.markdown("---")
 
-#---Charts Block---
-st.header("Charts")
+        #---Charts Block---
+        st.header("Charts")
 
-if validation_result == True:
-    visualize = Visualizer(analysed_results)
-    income_fig = visualize.income_bar(analysed_results["category_income"])
-    expense_fig = visualize.expense_bar(analysed_results["category_expense"])
-    savings_fig = visualize.expense_income_savings_bar(analysed_results["total_expense"],analysed_results["total_income"],analysed_results["total_savings"])
-    st.subheader("Income")
-    st.pyplot(income_fig)
-    st.subheader("Expense")
-    st.pyplot(expense_fig)
-    st.subheader("Savings")
-    st.pyplot(savings_fig)
+        visualize = Visualizer(analysed_results)
+        income_fig = visualize.income_bar(analysed_results["category_income"])
+        expense_fig = visualize.expense_bar(analysed_results["category_expense"])
+        savings_fig = visualize.expense_income_savings_bar(analysed_results["total_expense"],analysed_results["total_income"],analysed_results["total_savings"])
+        col1,col2 = st.columns(2)
+        with col1:
+            st.subheader("Income")
+            st.pyplot(income_fig)
+        with col2:
+            st.subheader("Expense")
+            st.pyplot(expense_fig)
+        st.subheader("Savings")
+        st.pyplot(savings_fig)
 
 
-st.markdown("---")
+        st.markdown("---")
 
-#---Finance Block---
-st.header("Finance Insights")
-if validation_result == True:
-    generate = InsightGenerator(analysed_results)
-    insights = generate.generate()
-    for insight in insights:
-        st.write("-",insight)
+        #---Finance Block---
+        st.header("Finance Insights")
+        generate = InsightGenerator(analysed_results)
+        insights = generate.generate()
+        for insight in insights:
+            st.write("-",insight)
 
 
