@@ -5,6 +5,13 @@ from src.validator import Validator
 from src.analyser import Analyser
 from src.visualizer import Visualizer
 from src.insights import InsightGenerator
+
+st.set_page_config(
+    page_title="Personal Finance Analyser",
+    page_icon="📊",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
 st.title("📊Personal Finance Analyser")
 st.markdown("""
 ## Welcome!
@@ -23,9 +30,20 @@ st.markdown("---")
 #-----Uploading block-----
 st.sidebar.header("📂Upload")
 file = None
+st.sidebar.write("""
+📂 Upload CSV
+
+Accepted format:
+• CSV
+• Required columns:
+  - Date
+  - Category
+  - Type
+  - Amount
+""")
 file = st.sidebar.file_uploader("Upload your csv file",type=["csv"])
 if file != None:
-    st.sidebar.write(f"Successfully uploaded the {file.name}")
+    st.sidebar.success(f"Successfully uploaded the {file.name}")
 
 validation_result = False
 if file != None:
@@ -51,11 +69,12 @@ if file != None:
         st.header("Finance Summary")
         col1,col2,col3 = st.columns(3)
         with col1:
-            st.metric("💰Total Income",analysed_results["total_income"])
+
+            st.metric("💰Total Income",f"₹{analysed_results["total_income"]:,.2f}")
         with col2:
-           st.metric("💸Expense",analysed_results["total_expense"])
+           st.metric("💸Expense",f"₹{analysed_results["total_expense"]:,.2f}")
         with col3:
-            st.metric("🏦Savings",analysed_results["total_savings"])
+            st.metric("🏦Savings",f"₹{analysed_results["total_savings"]:,.2f}")
 
         st.markdown("---")
 
@@ -83,7 +102,21 @@ if file != None:
         st.header("Finance Insights")
         generate = InsightGenerator(analysed_results)
         insights = generate.generate()
-        for insight in insights:
-            st.write("-",insight)
+        reference = {
+            "summary": "📝 Summary",
+            "ratios": "📊 Financial Ratios",
+            "category_analysis": "📂 Category Analysis",
+            "health": "❤️ Financial Health"
+        }
+        for key in insights.keys():
+            if(key == "health"):
+                st.subheader(f"{reference[key]} Insights : ")
+                for insight in insights[key]:
+                    st.success(insight)
+            else:
+                with st.expander(f"{reference[key]} Insights : "):
+                    for insight in insights[key]:
+                        if(key != "health"):
+                            st.markdown(f"- {insight}")
 
 

@@ -32,7 +32,7 @@ class Visualizer:
         fig,ax=plt.subplots()
         x = ["Savings","Expense","Income"]
         y = [savings,expense_data,income_data]
-        ax.barh(x,y)
+        ax.barh(x,y,color=["blue","red","green"])
         ax.set_title("Income VS Expense VS Savings")
         ax.set_xlabel("Amount")
         ax.set_ylabel("Category")
