@@ -3,6 +3,7 @@ import pandas as pd
 from src.read import Reader
 from src.validator import Validator
 from src.analyser import Analyser
+from src.visualizer import Visualizer
 st.title("📊Personal Finance Analyser")
 st.markdown("""
 ## Welcome!
@@ -62,6 +63,19 @@ st.markdown("---")
 
 #---Charts Block---
 st.header("Charts")
+
+if validation_result == True:
+    visualize = Visualizer(analysed_results)
+    income_fig = visualize.income_bar(analysed_results["category_income"])
+    expense_fig = visualize.expense_bar(analysed_results["category_expense"])
+    savings_fig = visualize.expense_income_savings_bar(analysed_results["total_expense"],analysed_results["total_income"],analysed_results["total_savings"])
+    st.subheader("Income")
+    st.pyplot(income_fig)
+    st.subheader("Expense")
+    st.pyplot(expense_fig)
+    st.subheader("Savings")
+    st.pyplot(savings_fig)
+
 
 st.markdown("---")
 
