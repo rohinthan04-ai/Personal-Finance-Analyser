@@ -97,40 +97,15 @@ streamlit run app.py
 
 ---
 
-## 📸 Screenshots
+## 📸 Application Preview
 
-> *(Add screenshots of your application here.)*
+| Home | Financial Summary |
+|------|-------------------|
+| ![](images/home.png) | ![](images/summary.png) |
 
-Example:
-
-```
-screenshots/
-├── home.png
-├── summary.png
-├── charts.png
-└── insights.png
-```
-
-After uploading the images to your repository:
-
-```markdown
-### Home Page
-
-![Home](screenshots/home.png)
-
-### Financial Summary
-
-![Summary](screenshots/summary.png)
-
-### Charts
-
-![Charts](screenshots/charts.png)
-
-### Insights
-
-![Insights](screenshots/insights.png)
-```
-
+| Charts | Insights |
+|--------|----------|
+| ![](images/charts.png) | ![](images/insights.png) |
 ---
 
 ## 📈 Sample Workflow
